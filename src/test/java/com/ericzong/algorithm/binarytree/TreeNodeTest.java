@@ -57,6 +57,14 @@ public class TreeNodeTest {
         Assert.assertEquals(queue, Arrays.asList(new String[]{"D", "B", "E", "C", "A"}));
     }
 
+    @Test(dataProvider = "data")
+    public void testTraverseLevelOrder(TreeNode root) {
+        List<String> queue = new ArrayList<>();
+        root.traverseLevelOrder(e -> queue.add(e.getData().toString()));
+
+        Assert.assertEquals(queue, Arrays.asList(new String[]{"A", "B", "C", "D", "E"}));
+    }
+
     /**
      *         A
      *       /   \

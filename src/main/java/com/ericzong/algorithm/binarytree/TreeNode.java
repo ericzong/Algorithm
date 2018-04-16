@@ -113,6 +113,22 @@ public class TreeNode {
         }
     }
 
+    public void traverseLevelOrder(Consumer<TreeNode> op) {
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.add(this);
+        TreeNode top;
+        while(!queue.isEmpty()) {
+            top = queue.poll();
+            op.accept(top);
+            if(top.getLeft() != null) {
+                queue.add(top.getLeft());
+            }
+            if(top.getRight() != null) {
+                queue.add(top.getRight());
+            }
+        }
+    }
+
     public boolean isBalanced() {
         return isBalanced(this);
     }
