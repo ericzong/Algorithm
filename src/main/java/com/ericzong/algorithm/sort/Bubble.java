@@ -6,6 +6,7 @@ import java.util.Comparator;
 /**
  * @author Eric Zong
  *
+ * 冒泡排序
  * 算法逻辑：
  *    依次将相临2个元素比较，如果前者比后者大，就交换
  *    第1趟：依次比较a[0]-a[n-1]相临元素，根据比较结果交换，完成时最大元素换到了a[n-1]；
@@ -56,7 +57,7 @@ public class Bubble {
         Object first = Array.get(data, i);
         Object second = Array.get(data, j);
 
-        if (!isSwap(first, second, comparator)) {
+        if (isOrdered(first, second, comparator)) {
             return false;
         }
 
@@ -66,11 +67,11 @@ public class Bubble {
         return true;
     }
 
-    private static boolean isSwap(Object first, Object second, Comparator comparator) {
+    private static boolean isOrdered(Object first, Object second, Comparator comparator) {
         if (comparator != null) {
-            return comparator.compare(first, second) > 0;
+            return comparator.compare(first, second) <= 0;
         } else if (first instanceof Comparable) {
-            return ((Comparable) first).compareTo(second) > 0;
+            return ((Comparable) first).compareTo(second) <= 0;
         }
 
         throw new RuntimeException("Uncomparable!");

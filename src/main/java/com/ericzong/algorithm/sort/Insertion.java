@@ -4,6 +4,9 @@ import java.lang.reflect.Array;
 import java.util.Comparator;
 
 /**
+ * @author Eric Zong
+ *
+ * 直接插入排序
  * 算法逻辑：
  * 依次将待排序的数据元素按其值的大小插入前面的有序序列
  * 第1趟插入：将第2个元素插入前面的有序子序列——此时前面只有一个元素，当然是有序的
@@ -42,9 +45,9 @@ public class Insertion {
 
     private static boolean isOrdered(Object first, Object last, Comparator comparator) {
         if (comparator != null) {
-            return comparator.compare(first, last) < 0;
+            return comparator.compare(first, last) <= 0;
         } else if (last instanceof Comparable) {
-            return ((Comparable) first).compareTo(last) < 0;
+            return ((Comparable) first).compareTo(last) <= 0;
         }
 
         throw new RuntimeException("Uncomparable!");

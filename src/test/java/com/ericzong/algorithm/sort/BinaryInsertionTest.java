@@ -10,13 +10,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class StraightSelectTest {
+public class BinaryInsertionTest {
 
     @Test
     public void testSort() throws NoSuchMethodException,
             IllegalAccessException,
             InvocationTargetException {
-        SortUtils.testSort(StraightSelect.class);
+        SortUtils.testSort(BinaryInsertion.class);
     }
 
 }

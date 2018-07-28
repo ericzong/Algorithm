@@ -4,6 +4,9 @@ import java.lang.reflect.Array;
 import java.util.Comparator;
 
 /**
+ * @author Eric Zong
+ *
+ * 选择排序
  * 算法逻辑：<br/>
  *    1：从a[0]-a[N-1]中选出最小的数据，然后与a[0]交换位置<br/>
  *    2：从a[1]-a[N-1]中选出最小的数据，然后与a[1]交换位置（第1步结束后a[0]就是N个数的最小值）<br/>
@@ -55,9 +58,9 @@ public class StraightSelect {
 
     private static boolean isOrdered(Object first, Object last, Comparator comparator) {
         if (comparator != null) {
-            return comparator.compare(first, last) < 0;
+            return comparator.compare(first, last) <= 0;
         } else if (last instanceof Comparable) {
-            return ((Comparable) first).compareTo(last) < 0;
+            return ((Comparable) first).compareTo(last) <= 0;
         }
 
         throw new RuntimeException("Uncomparable!");
