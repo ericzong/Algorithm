@@ -9,7 +9,9 @@ import java.util.Objects;
  */
 public class Anagram {
 
+    private Anagram() {
 
+    }
 
     public static boolean isAnagramBySort(String one, String another) {
         if (one.length() != another.length() || one.equalsIgnoreCase(another)) {

@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class CharCounter {
 
+    private CharCounter() {
+
+    }
 
     public static Map<Character, Long> count(String text) {
         return count(text.toCharArray());
